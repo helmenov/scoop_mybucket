@@ -1,0 +1,46 @@
+{
+    "homepage": "https://fiji.sc/",
+    "description": "Fiji is an image processing package -- a \"batteries-included\" distribution of ImageJ, bundling many plugins which facilitate scientific image analysis.",
+    "version": "20201104-1356",
+    "architecture": {
+        "32bit": {
+            "url": "https://downloads.imagej.net/fiji/archive/20201104-1356/fiji-win32.zip",
+            "extract_dir": "Fiji.app",
+            "hash": "bb5defff0cc081129afe208c97179cb24372f99c9d8e8a231820ae0d227d87b9",
+            "bin": "ImageJ-win32.exe",
+            "shortcuts": [
+                [
+                    "ImageJ-win32.exe",
+                    "ImageJ-win32"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://downloads.imagej.net/fiji/archive/20201104-1356/fiji-win64.zip",
+            "extract_dir": "Fiji.app",
+            "hash": "5e062e1e966617993f287ee3ae47da84fd1f79883761550b4fc13e7b41f7fe35",
+            "bin": "ImageJ-win64.exe",
+            "shortcuts": [
+                [
+                    "ImageJ-win64.exe",
+                    "ImageJ-win64"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "https://downloads.imagej.net/fiji/archive",
+        "re": ">([\\d]{8}-[\\d]{4})/",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://downloads.imagej.net/fiji/archive/$version/fiji-win32.zip"
+            },
+            "64bit": {
+                "url": "https://downloads.imagej.net/fiji/archive/$version/fiji-win64.zip"
+            }
+        }
+    }
+}
